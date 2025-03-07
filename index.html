@@ -1,34 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Blog preview card</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Blog preview card</title>
 
-  Learning
+    <style>
+      /* TODO */
+      /* 1. MAKE VARIABLES FOR COLORS
+         2. EMBED THE FONT USING THE ASSETS AND NOT VIA GOOGLE FONTS
+         */
 
-  Published 21 Dec 2023
+      /* GENERAL RULES AND DEFAULT RESET */
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Figtree", "sans-serif";
+        line-height: 150%;
+        letter-spacing: 0px;
+      }
+      /*  CENTER CARD, SET BACKGROUND  */
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4d04e;
+      }
+      /* CARD CONTAINER */
+      .card-container {
+        background-color: #fff;
+        border: 1px solid #111;
+        box-shadow: 8px 8px 0px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+        width: 384px;
+        transition: box-shadow 0.05s linear 0s;
+      }
+      .card-container img {
+        border-radius: 10px;
+      }
+      /* HOVERING  */
+      .card-container:hover {
+        box-shadow: 16px 16px 0px;
+      }
+      .card-container:hover main h1 {
+        color: #f4d04e;
+      }
 
-  HTML & CSS foundations
+      /* MAIN */
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
 
-  These languages are the backbone of every website, defining structure, content, and presentation.
+      /* FOOTER */
+      footer {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      footer img {
+        width: 32px;
+      }
+      /* TYPOGRAPHY */
 
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .background {
+        background-color: #f4d04e;
+        border-radius: 4px;
+        padding: 4px 12px;
+        width: 82px;
+      }
+      .text-preset-3-bold {
+        font-size: 14px;
+        font-weight: bold;
+        color: #111;
+      }
+      .text-preset-3 {
+        font-size: 14px;
+        font-weight: medium;
+        color: #111;
+      }
+      h1 {
+        font-size: 24px;
+        color: #111;
+        transition: color 0.7s ease 0s;
+      }
+      .text-preset-2 {
+        font-size: 16px;
+        font-weight: medium;
+        color: #6b6b6b;
+      }
+      /* MEDIA QUERIES */
+      @media (max-width: 400px) {
+        .card-container {
+          width: 327px;
+        }
+        .text-preset-3,
+        .text-preset-3-bold {
+          font-size: 12px;
+        }
+        h1 {
+          font-size: 20px;
+        }
+        .text-preset-2 {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <img src="./assets/images/illustration-article.svg" />
+      <main>
+        <p class="text-preset-3-bold background">Learning</p>
+        <p class="text-preset-3">Published 21 Dec 2023</p>
+        <h1>HTML & CSS foundations</h1>
+        <p class="text-preset-2">
+          These laguages are the backbone of every website, defining structure,
+          content, and presentation
+        </p>
+      </main>
+      <footer>
+        <img src="./assets/images/image-avatar.webp" />
+        <span class="text-preset-3-bold">Greg Hopper</span>
+      </footer>
+    </div>
+  </body>
 </html>
